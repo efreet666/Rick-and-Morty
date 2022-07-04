@@ -16,6 +16,15 @@
 		F50C321228720D6300BD5A9A /* Rick_and_MortyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C321128720D6300BD5A9A /* Rick_and_MortyTests.swift */; };
 		F50C321C28720D6400BD5A9A /* Rick_and_MortyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C321B28720D6400BD5A9A /* Rick_and_MortyUITests.swift */; };
 		F50C321E28720D6400BD5A9A /* Rick_and_MortyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C321D28720D6400BD5A9A /* Rick_and_MortyUITestsLaunchTests.swift */; };
+		F50C323128722B3500BD5A9A /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50C322F28722B2800BD5A9A /* Alamofire.xcframework */; };
+		F50C323228722B3500BD5A9A /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F50C322F28722B2800BD5A9A /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F50C323428722B6100BD5A9A /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C323328722B6100BD5A9A /* Networking.swift */; };
+		F50C323628722CD500BD5A9A /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C323528722CD500BD5A9A /* PersonModel.swift */; };
+		F50C32382872305900BD5A9A /* myPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C32372872305900BD5A9A /* myPersonModel.swift */; };
+		F50C323C2872362700BD5A9A /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C323B2872362700BD5A9A /* Controller.swift */; };
+		F50C32402872365500BD5A9A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C323F2872365500BD5A9A /* MainViewController.swift */; };
+		F50C3244287238BD00BD5A9A /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C3242287238BD00BD5A9A /* CharacterTableViewCell.swift */; };
+		F50C3245287238BD00BD5A9A /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F50C3243287238BD00BD5A9A /* CharacterTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +44,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F50C322E28720F5900BD5A9A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F50C323228722B3500BD5A9A /* Alamofire.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		F50C31F728720D6000BD5A9A /* Rick and Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick and Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50C31FA28720D6000BD5A9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +72,14 @@
 		F50C321728720D6400BD5A9A /* Rick and MortyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rick and MortyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50C321B28720D6400BD5A9A /* Rick_and_MortyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_and_MortyUITests.swift; sourceTree = "<group>"; };
 		F50C321D28720D6400BD5A9A /* Rick_and_MortyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_and_MortyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F50C322F28722B2800BD5A9A /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
+		F50C323328722B6100BD5A9A /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		F50C323528722CD500BD5A9A /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
+		F50C32372872305900BD5A9A /* myPersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPersonModel.swift; sourceTree = "<group>"; };
+		F50C323B2872362700BD5A9A /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		F50C323F2872365500BD5A9A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F50C3242287238BD00BD5A9A /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		F50C3243287238BD00BD5A9A /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F50C323128722B3500BD5A9A /* Alamofire.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +111,7 @@
 		F50C31EE28720D6000BD5A9A = {
 			isa = PBXGroup;
 			children = (
+				F50C322F28722B2800BD5A9A /* Alamofire.xcframework */,
 				F50C31F928720D6000BD5A9A /* Rick and Morty */,
 				F50C321028720D6300BD5A9A /* Rick and MortyTests */,
 				F50C321A28720D6400BD5A9A /* Rick and MortyUITests */,
@@ -99,12 +132,10 @@
 		F50C31F928720D6000BD5A9A /* Rick and Morty */ = {
 			isa = PBXGroup;
 			children = (
-				F50C31FA28720D6000BD5A9A /* AppDelegate.swift */,
-				F50C31FC28720D6000BD5A9A /* SceneDelegate.swift */,
-				F50C31FE28720D6000BD5A9A /* ViewController.swift */,
-				F50C320028720D6000BD5A9A /* Main.storyboard */,
-				F50C320328720D6300BD5A9A /* Assets.xcassets */,
-				F50C320528720D6300BD5A9A /* LaunchScreen.storyboard */,
+				F50C323E2872363B00BD5A9A /* View */,
+				F50C323D2872362D00BD5A9A /* Cotrollers */,
+				F50C323A287235F400BD5A9A /* Model */,
+				F50C3239287235E100BD5A9A /* Service */,
 				F50C320828720D6300BD5A9A /* Info.plist */,
 			);
 			path = "Rick and Morty";
@@ -127,6 +158,55 @@
 			path = "Rick and MortyUITests";
 			sourceTree = "<group>";
 		};
+		F50C3239287235E100BD5A9A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F50C320028720D6000BD5A9A /* Main.storyboard */,
+				F50C31FA28720D6000BD5A9A /* AppDelegate.swift */,
+				F50C31FC28720D6000BD5A9A /* SceneDelegate.swift */,
+				F50C320328720D6300BD5A9A /* Assets.xcassets */,
+				F50C320528720D6300BD5A9A /* LaunchScreen.storyboard */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F50C323A287235F400BD5A9A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F50C323328722B6100BD5A9A /* Networking.swift */,
+				F50C323528722CD500BD5A9A /* PersonModel.swift */,
+				F50C32372872305900BD5A9A /* myPersonModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F50C323D2872362D00BD5A9A /* Cotrollers */ = {
+			isa = PBXGroup;
+			children = (
+				F50C323B2872362700BD5A9A /* Controller.swift */,
+			);
+			path = Cotrollers;
+			sourceTree = "<group>";
+		};
+		F50C323E2872363B00BD5A9A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F50C32412872388A00BD5A9A /* TableViewCell */,
+				F50C31FE28720D6000BD5A9A /* ViewController.swift */,
+				F50C323F2872365500BD5A9A /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F50C32412872388A00BD5A9A /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F50C3242287238BD00BD5A9A /* CharacterTableViewCell.swift */,
+				F50C3243287238BD00BD5A9A /* CharacterTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +217,7 @@
 				F50C31F328720D6000BD5A9A /* Sources */,
 				F50C31F428720D6000BD5A9A /* Frameworks */,
 				F50C31F528720D6000BD5A9A /* Resources */,
+				F50C322E28720F5900BD5A9A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,6 +315,7 @@
 				F50C320728720D6300BD5A9A /* LaunchScreen.storyboard in Resources */,
 				F50C320428720D6300BD5A9A /* Assets.xcassets in Resources */,
 				F50C320228720D6000BD5A9A /* Main.storyboard in Resources */,
+				F50C3245287238BD00BD5A9A /* CharacterTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +342,13 @@
 			files = (
 				F50C31FF28720D6000BD5A9A /* ViewController.swift in Sources */,
 				F50C31FB28720D6000BD5A9A /* AppDelegate.swift in Sources */,
+				F50C3244287238BD00BD5A9A /* CharacterTableViewCell.swift in Sources */,
+				F50C32382872305900BD5A9A /* myPersonModel.swift in Sources */,
+				F50C323628722CD500BD5A9A /* PersonModel.swift in Sources */,
 				F50C31FD28720D6000BD5A9A /* SceneDelegate.swift in Sources */,
+				F50C323428722B6100BD5A9A /* Networking.swift in Sources */,
+				F50C323C2872362700BD5A9A /* Controller.swift in Sources */,
+				F50C32402872365500BD5A9A /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +527,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rick and Morty/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -466,6 +558,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rick and Morty/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
