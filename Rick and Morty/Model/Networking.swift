@@ -8,9 +8,6 @@
 import Foundation
 import Alamofire
 
-
-
-
 enum ObtainResult {
     case success(MyPersonModel)
     case failure(Error)
@@ -18,9 +15,6 @@ enum ObtainResult {
 
 class NetworkManager{
 
-    
-    var characters = [Result]()
-    
     static let allPersonURL = "https://rickandmortyapi.com/api/character"
     
     class func fetchData(_ pageUrl: String, completion: @escaping (ObtainResult) -> Void) {
@@ -36,33 +30,6 @@ class NetworkManager{
         }
     }
     
-    func fetchCountryData(_ pageUrl: String) {
-        DispatchQueue.main.async {
-            NetworkManager.fetchData(pageUrl) { [weak self] result in
-                switch result {
-                case .success(let infoDataModel):
-                    // Decode response into data model
-                    if let result = infoDataModel.results {
-                        for character in result{
-                            self?.characters.append(character)
-                            print(self?.characters.count as Any)
-                        
-                            
-                        }
-                    }
-                    
-                    
-                    
-                case .failure(let err):
-                    print(err)
-                }
-            }
-        }
-        
-    }
-    
-    func request(pageUrl: String){
-        fetchCountryData(pageUrl)
-    }
+
     
 }

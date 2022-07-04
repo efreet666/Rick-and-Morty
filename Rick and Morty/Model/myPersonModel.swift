@@ -27,8 +27,8 @@ struct Result: Codable {
 
 // MARK: - Location
 struct Location: Codable {
-    let name: String
-    let url: String
+    let name: String?
+    let url: String?
 }
 
 enum Status: String, Codable {

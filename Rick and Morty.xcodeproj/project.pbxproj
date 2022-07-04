@@ -178,8 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				F50C323328722B6100BD5A9A /* Networking.swift */,
-				F50C323528722CD500BD5A9A /* PersonModel.swift */,
 				F50C32372872305900BD5A9A /* myPersonModel.swift */,
+				F50C323528722CD500BD5A9A /* PersonModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

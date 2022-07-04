@@ -8,7 +8,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    var characters = [Result]()
     let controller = Controller()
     let network = NetworkManager()
     @IBOutlet weak var tableViewOutlet: UITableView!
@@ -21,28 +21,48 @@ class MainViewController: UIViewController {
         
        
         self.tableViewOutlet.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "CharacterTableViewCell")
-        
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        controller.requestData()
         
+        fetchCountryData()
     }
     
-    func updateTableView() {
-        tableViewOutlet.reloadData()
+    func fetchCountryData() {
+        DispatchQueue.main.async {
+            NetworkManager.fetchData(NetworkManager.allPersonURL) { [weak self] result in
+                switch result {
+                case .success(let infoDataModel):
+                    if let result = infoDataModel.results {
+                        for character in result{
+                            self?.characters.append(character)
+                            
+                            self?.tableViewOutlet.reloadData()
+                        }
+                    }
+                    
+                case .failure(let err):
+                    print(err)
+                }
+            }
+        }
+        
     }
     
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return network.characters.count
+        return characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableViewOutlet.dequeueReusableCell(withIdentifier: "CharacterTableViewCell", for: indexPath) as! CharacterTableViewCell
-        let character = network.characters[indexPath.row]
-        CharacterTableViewCell.setup(character)
+        let character = characters[indexPath.row]
+        cell.setup(character)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
     }
     
     

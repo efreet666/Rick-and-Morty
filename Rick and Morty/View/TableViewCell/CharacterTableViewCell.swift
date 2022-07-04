@@ -17,6 +17,7 @@ class CharacterTableViewCell: UITableViewCell {
     @IBOutlet weak var LastLocationLabel: UILabel!
     @IBOutlet weak var PersonType: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
  
@@ -26,15 +27,18 @@ class CharacterTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    static func setup(_ Character: Result) {
-        let viewCell = CharacterTableViewCell()
+    func setup(_ Character: Result) {
+  
         
         guard let image = Character.image else { return }
         guard let imageUrl = URL(string: image) else { return }
         guard let name = Character.name else { return }
         guard let location = Character.location else { return }
-        
-        viewCell.characterImageView.kf.setImage(with: imageUrl)
-        
+        guard let alive = Character.status else { return }
+        guard let type = Character.type else { return }
+        characterImageView.kf.setImage(with: imageUrl)
+        PersonName.text = name
+        LastLocationLabel.text = location.name
+        PersonType.text = alive.rawValue + " - " + type
     }
 }
