@@ -17,6 +17,7 @@ enum ObtainResult {
 }
 
 class NetworkManager{
+
     
     var characters = [Result]()
     
@@ -44,11 +45,13 @@ class NetworkManager{
                     if let result = infoDataModel.results {
                         for character in result{
                             self?.characters.append(character)
-                            print(self?.characters as Any)
+                            print(self?.characters.count as Any)
+                        
+                            
                         }
                     }
                     
-                    print(self?.characters.first as Any)
+                    
                     
                 case .failure(let err):
                     print(err)

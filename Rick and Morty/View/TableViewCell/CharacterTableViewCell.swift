@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CharacterTableViewCell: UITableViewCell {
 
@@ -33,7 +34,7 @@ class CharacterTableViewCell: UITableViewCell {
         guard let name = Character.name else { return }
         guard let location = Character.location else { return }
         
-        viewCell.characterImageView.
+        viewCell.characterImageView.kf.setImage(with: imageUrl)
         
     }
 }

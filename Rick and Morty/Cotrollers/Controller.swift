@@ -11,6 +11,7 @@ class Controller {
     
     let network = NetworkManager()
     
+   
     func requestData() {
         network.request(pageUrl: NetworkManager.allPersonURL)
     }
