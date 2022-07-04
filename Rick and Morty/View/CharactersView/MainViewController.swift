@@ -23,10 +23,10 @@ class MainViewController: UIViewController {
         self.tableViewOutlet.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "CharacterTableViewCell")
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
-        fetchCountryData()
+        fetchCharactersData()
     }
     
-    func fetchCountryData() {
+    func fetchCharactersData() {
         DispatchQueue.main.async {
             NetworkManager.fetchData(NetworkManager.allPersonURL) { [weak self] result in
                 switch result {
@@ -65,6 +65,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         return 140
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyB = UIStoryboard(name: "Main", bundle: nil)
+                guard let vc = storyB.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else { return }
+                self.navigationController?.pushViewController(vc, animated: true)
+        let character = characters[indexPath.row]
+        vc.id = character.id
+    }
     
 }

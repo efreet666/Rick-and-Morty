@@ -26,6 +26,7 @@
 		F50C3245287238BD00BD5A9A /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F50C3243287238BD00BD5A9A /* CharacterTableViewCell.xib */; };
 		F50C3248287369B400BD5A9A /* Kingfisher.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50C3246287369A300BD5A9A /* Kingfisher.xcframework */; };
 		F50C3249287369B400BD5A9A /* Kingfisher.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F50C3246287369A300BD5A9A /* Kingfisher.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F50C324D2873957F00BD5A9A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C324C2873957F00BD5A9A /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		F50C3242287238BD00BD5A9A /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		F50C3243287238BD00BD5A9A /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
 		F50C3246287369A300BD5A9A /* Kingfisher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Kingfisher.xcframework; path = Carthage/Build/Kingfisher.xcframework; sourceTree = "<group>"; };
+		F50C324C2873957F00BD5A9A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,8 +197,8 @@
 		F50C323E2872363B00BD5A9A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F50C32412872388A00BD5A9A /* TableViewCell */,
-				F50C323F2872365500BD5A9A /* MainViewController.swift */,
+				F50C324A2873953C00BD5A9A /* CharactersView */,
+				F50C324B2873955200BD5A9A /* DetailView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,6 +210,23 @@
 				F50C3243287238BD00BD5A9A /* CharacterTableViewCell.xib */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		F50C324A2873953C00BD5A9A /* CharactersView */ = {
+			isa = PBXGroup;
+			children = (
+				F50C32412872388A00BD5A9A /* TableViewCell */,
+				F50C323F2872365500BD5A9A /* MainViewController.swift */,
+			);
+			path = CharactersView;
+			sourceTree = "<group>";
+		};
+		F50C324B2873955200BD5A9A /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				F50C324C2873957F00BD5A9A /* DetailViewController.swift */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F50C324D2873957F00BD5A9A /* DetailViewController.swift in Sources */,
 				F50C31FB28720D6000BD5A9A /* AppDelegate.swift in Sources */,
 				F50C3244287238BD00BD5A9A /* CharacterTableViewCell.swift in Sources */,
 				F50C32382872305900BD5A9A /* myPersonModel.swift in Sources */,
