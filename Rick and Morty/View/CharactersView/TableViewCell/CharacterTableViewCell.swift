@@ -28,17 +28,19 @@ class CharacterTableViewCell: UITableViewCell {
     }
     
     func setup(_ Character: Result) {
-  
         
         guard let image = Character.image else { return }
         guard let imageUrl = URL(string: image) else { return }
         guard let name = Character.name else { return }
         guard let location = Character.location else { return }
         guard let alive = Character.status else { return }
-        guard let type = Character.type else { return }
+        guard let gender = Character.species else { return }
         characterImageView.kf.setImage(with: imageUrl)
         PersonName.text = name
         LastLocationLabel.text = location.name
-        PersonType.text = alive.rawValue + " - " + type
+        PersonType.text = alive.rawValue + " - " + gender.rawValue
+        characterImageView.layer.masksToBounds = true
+        characterImageView.layer.cornerRadius = 15
+        
     }
 }

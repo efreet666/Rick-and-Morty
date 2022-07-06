@@ -18,8 +18,7 @@
 		F50C323128722B3500BD5A9A /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50C322F28722B2800BD5A9A /* Alamofire.xcframework */; };
 		F50C323228722B3500BD5A9A /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F50C322F28722B2800BD5A9A /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F50C323428722B6100BD5A9A /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C323328722B6100BD5A9A /* Networking.swift */; };
-		F50C323628722CD500BD5A9A /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C323528722CD500BD5A9A /* PersonModel.swift */; };
-		F50C32382872305900BD5A9A /* myPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C32372872305900BD5A9A /* myPersonModel.swift */; };
+		F50C32382872305900BD5A9A /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C32372872305900BD5A9A /* CharacterModel.swift */; };
 		F50C323C2872362700BD5A9A /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C323B2872362700BD5A9A /* Controller.swift */; };
 		F50C32402872365500BD5A9A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C323F2872365500BD5A9A /* MainViewController.swift */; };
 		F50C3244287238BD00BD5A9A /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C3242287238BD00BD5A9A /* CharacterTableViewCell.swift */; };
@@ -76,8 +75,7 @@
 		F50C321D28720D6400BD5A9A /* Rick_and_MortyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_and_MortyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F50C322F28722B2800BD5A9A /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
 		F50C323328722B6100BD5A9A /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		F50C323528722CD500BD5A9A /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
-		F50C32372872305900BD5A9A /* myPersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPersonModel.swift; sourceTree = "<group>"; };
+		F50C32372872305900BD5A9A /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		F50C323B2872362700BD5A9A /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		F50C323F2872365500BD5A9A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F50C3242287238BD00BD5A9A /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
@@ -180,8 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				F50C323328722B6100BD5A9A /* Networking.swift */,
-				F50C32372872305900BD5A9A /* myPersonModel.swift */,
-				F50C323528722CD500BD5A9A /* PersonModel.swift */,
+				F50C32372872305900BD5A9A /* CharacterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,8 +212,8 @@
 		F50C324A2873953C00BD5A9A /* CharactersView */ = {
 			isa = PBXGroup;
 			children = (
-				F50C32412872388A00BD5A9A /* TableViewCell */,
 				F50C323F2872365500BD5A9A /* MainViewController.swift */,
+				F50C32412872388A00BD5A9A /* TableViewCell */,
 			);
 			path = CharactersView;
 			sourceTree = "<group>";
@@ -365,8 +362,7 @@
 				F50C324D2873957F00BD5A9A /* DetailViewController.swift in Sources */,
 				F50C31FB28720D6000BD5A9A /* AppDelegate.swift in Sources */,
 				F50C3244287238BD00BD5A9A /* CharacterTableViewCell.swift in Sources */,
-				F50C32382872305900BD5A9A /* myPersonModel.swift in Sources */,
-				F50C323628722CD500BD5A9A /* PersonModel.swift in Sources */,
+				F50C32382872305900BD5A9A /* CharacterModel.swift in Sources */,
 				F50C31FD28720D6000BD5A9A /* SceneDelegate.swift in Sources */,
 				F50C323428722B6100BD5A9A /* Networking.swift in Sources */,
 				F50C323C2872362700BD5A9A /* Controller.swift in Sources */,

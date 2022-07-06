@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class MainViewController: UIViewController {
     var characters = [Result]()
     let controller = Controller()
@@ -66,11 +67,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyB = UIStoryboard(name: "Main", bundle: nil)
-                guard let vc = storyB.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else { return }
-                self.navigationController?.pushViewController(vc, animated: true)
+        
+        guard let vc = storyboard?.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else { return }
+        
         let character = characters[indexPath.row]
-        vc.id = character.id
+        print(character)
+        vc.character = character
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
