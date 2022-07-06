@@ -12,6 +12,8 @@ class DetailViewController: UIViewController {
     
     var character: Result?
     
+    var characterEpisodes = [Episode]()
+    
     @IBOutlet weak var UIImageViewOutlet: UIImageView!
     @IBOutlet weak var nameLabelOutlet: UILabel!
     @IBOutlet weak var statusLabelOutlet: UILabel!
@@ -25,24 +27,26 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
        
-        fetchCharactersData()
+      
+        
+        guard let currentCharacter = character else { return }
+        fetchEpisodes(episodeUrl: "https://rickandmortyapi.com/api/episode/\(getCharacterEpisodes(currentCharacter))")
+        
         setupCharacterData()
     }
-   
     
-    func fetchCharactersData() {
-        print(character)
-        guard let currentCharacter = character else { return }
-        let characterURL = "https://rickandmortyapi.com/api/character/\(String(describing: currentCharacter.id))"
-        
+   
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+func fetchEpisodes(episodeUrl: String) {
+    
         DispatchQueue.main.async {
-            NetworkManager.fetchData(characterURL) { [weak self] result in
+            NetworkManager.fetchEpisode(episodeURL: episodeUrl) { [weak self] result in
                 switch result {
-                case .success(let characterData):
-                    if let result = characterData.results {
-                        self?.character = result.first
-                        print(self?.character as Any)
-                    }
+                case .success(let episodeData):
+                    self?.characterEpisodes.append(episodeData)
                     
                 case .failure(let err):
                     print(err)
@@ -50,6 +54,13 @@ class DetailViewController: UIViewController {
             }
         }
         
+    }
+    func getCharacterEpisodes(_ character: Result) -> String {
+        var characterEpisodes = ""
+        guard let episodes = character.episode else { return characterEpisodes }
+
+        characterEpisodes = episodes.map {$0.components(separatedBy: "/").last!}.reduce("", +)
+        return characterEpisodes
     }
     
     func setupCharacterData() {

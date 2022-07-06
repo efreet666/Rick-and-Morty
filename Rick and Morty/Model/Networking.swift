@@ -13,6 +13,11 @@ enum ObtainResult {
     case failure(Error)
 }
 
+enum ObtainEpisodeResult {
+    case success(Episode)
+    case failure(Error)
+}
+
 class NetworkManager{
 
     static let allPersonURL = "https://rickandmortyapi.com/api/character"
@@ -24,6 +29,18 @@ class NetworkManager{
                 completion(.success(json))
                 print(completion(.success(json)))
                 
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    class func fetchEpisode(episodeURL: String, completion: @escaping (ObtainEpisodeResult) -> Void) {
+        AF.request(episodeURL).responseDecodable(of: Episode.self) {
+            responseJson in
+            switch responseJson.result {
+            case .success(let json):
+                completion(.success(json))
             case .failure(let error):
                 completion(.failure(error))
             }

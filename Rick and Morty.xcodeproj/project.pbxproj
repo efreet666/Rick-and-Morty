@@ -26,6 +26,9 @@
 		F50C3248287369B400BD5A9A /* Kingfisher.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50C3246287369A300BD5A9A /* Kingfisher.xcframework */; };
 		F50C3249287369B400BD5A9A /* Kingfisher.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F50C3246287369A300BD5A9A /* Kingfisher.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F50C324D2873957F00BD5A9A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50C324C2873957F00BD5A9A /* DetailViewController.swift */; };
+		F53EC2282875C5950012E3F3 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53EC2262875C5950012E3F3 /* EpisodeTableViewCell.swift */; };
+		F53EC2292875C5950012E3F3 /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F53EC2272875C5950012E3F3 /* EpisodeTableViewCell.xib */; };
+		F53EC22B287611160012E3F3 /* EpisodeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53EC22A287611160012E3F3 /* EpisodeDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,9 @@
 		F50C3243287238BD00BD5A9A /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
 		F50C3246287369A300BD5A9A /* Kingfisher.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Kingfisher.xcframework; path = Carthage/Build/Kingfisher.xcframework; sourceTree = "<group>"; };
 		F50C324C2873957F00BD5A9A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F53EC2262875C5950012E3F3 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		F53EC2272875C5950012E3F3 /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
+		F53EC22A287611160012E3F3 /* EpisodeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +185,7 @@
 			children = (
 				F50C323328722B6100BD5A9A /* Networking.swift */,
 				F50C32372872305900BD5A9A /* CharacterModel.swift */,
+				F53EC22A287611160012E3F3 /* EpisodeDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,9 +228,19 @@
 		F50C324B2873955200BD5A9A /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
+				F53EC2252875C5700012E3F3 /* EpisodeTableViewCell */,
 				F50C324C2873957F00BD5A9A /* DetailViewController.swift */,
 			);
 			path = DetailView;
+			sourceTree = "<group>";
+		};
+		F53EC2252875C5700012E3F3 /* EpisodeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F53EC2262875C5950012E3F3 /* EpisodeTableViewCell.swift */,
+				F53EC2272875C5950012E3F3 /* EpisodeTableViewCell.xib */,
+			);
+			path = EpisodeTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +351,7 @@
 				F50C320728720D6300BD5A9A /* LaunchScreen.storyboard in Resources */,
 				F50C320428720D6300BD5A9A /* Assets.xcassets in Resources */,
 				F50C320228720D6000BD5A9A /* Main.storyboard in Resources */,
+				F53EC2292875C5950012E3F3 /* EpisodeTableViewCell.xib in Resources */,
 				F50C3245287238BD00BD5A9A /* CharacterTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,8 +377,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F53EC2282875C5950012E3F3 /* EpisodeTableViewCell.swift in Sources */,
 				F50C324D2873957F00BD5A9A /* DetailViewController.swift in Sources */,
 				F50C31FB28720D6000BD5A9A /* AppDelegate.swift in Sources */,
+				F53EC22B287611160012E3F3 /* EpisodeDataModel.swift in Sources */,
 				F50C3244287238BD00BD5A9A /* CharacterTableViewCell.swift in Sources */,
 				F50C32382872305900BD5A9A /* CharacterModel.swift in Sources */,
 				F50C31FD28720D6000BD5A9A /* SceneDelegate.swift in Sources */,
