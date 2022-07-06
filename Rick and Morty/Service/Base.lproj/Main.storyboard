@@ -140,6 +140,7 @@
                     <connections>
                         <outlet property="LocationLabelOutlet" destination="bfm-N1-6fN" id="3rD-y7-uK4"/>
                         <outlet property="UIImageViewOutlet" destination="gnf-zC-2sY" id="Xmq-J6-ugF"/>
+                        <outlet property="episodeTableView" destination="U7I-zy-MaM" id="z58-UW-mLd"/>
                         <outlet property="firstSeenLabelOutlet" destination="y55-03-nC7" id="Vyb-2O-H3b"/>
                         <outlet property="nameLabelOutlet" destination="C1w-VE-xnW" id="RxY-2S-gaf"/>
                         <outlet property="statusLabelOutlet" destination="MEq-Mp-CP4" id="Zd9-B7-1Wu"/>

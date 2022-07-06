@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="EpisodeTableViewCell" customModule="Rick_and_Morty" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="EpisodeTableViewCell" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="EpisodeTableViewCell" customModule="Rick_and_Morty" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -35,6 +35,10 @@
                 <color key="backgroundColor" systemColor="systemGray2Color"/>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="episodeIdLabel" destination="6RB-Qm-BTE" id="5Z4-pX-Vur"/>
+                <outlet property="episodeNameLabel" destination="Kjz-0T-02X" id="Thx-KV-DZV"/>
+            </connections>
             <point key="canvasLocation" x="132" y="100"/>
         </tableViewCell>
     </objects>

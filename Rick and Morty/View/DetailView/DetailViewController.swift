@@ -11,13 +11,13 @@ import Kingfisher
 class DetailViewController: UIViewController {
     
     var character: Result?
-    
     var characterEpisodes = [Episode]()
     
+    // MARK: - Outlets
+    @IBOutlet weak var episodeTableView: UITableView!
     @IBOutlet weak var UIImageViewOutlet: UIImageView!
     @IBOutlet weak var nameLabelOutlet: UILabel!
     @IBOutlet weak var statusLabelOutlet: UILabel!
-    
     @IBOutlet weak var LocationLabelOutlet: UILabel!
     @IBOutlet weak var firstSeenLabelOutlet: UILabel!
     
@@ -26,13 +26,14 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
-      
+        self.episodeTableView.register(UINib(nibName: "EpisodeTableViewCell", bundle: nil), forCellReuseIdentifier: "EpisodeTableViewCell")
+        self.episodeTableView.delegate = self
+        self.episodeTableView.dataSource = self
         
         guard let currentCharacter = character else { return }
         fetchEpisodes(episodeUrl: "https://rickandmortyapi.com/api/episode/\(getCharacterEpisodes(currentCharacter))")
         
-        setupCharacterData()
+       
     }
     
    
@@ -47,7 +48,8 @@ func fetchEpisodes(episodeUrl: String) {
                 switch result {
                 case .success(let episodeData):
                     self?.characterEpisodes.append(episodeData)
-                    
+                    self?.setupCharacterData()
+                    self?.episodeTableView.reloadData()
                 case .failure(let err):
                     print(err)
                 }
@@ -82,4 +84,20 @@ func fetchEpisodes(episodeUrl: String) {
         
     }
 
+}
+
+extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(characterEpisodes.count)
+        return characterEpisodes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.episodeTableView.dequeueReusableCell(withIdentifier: "EpisodeTableViewCell", for: indexPath) as! EpisodeTableViewCell
+        cell.setup(characterEpisodes[indexPath.row])
+        return cell
+    }
+    
+    
+    
 }
