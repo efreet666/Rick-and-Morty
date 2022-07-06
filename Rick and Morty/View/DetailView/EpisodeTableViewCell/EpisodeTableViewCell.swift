@@ -9,6 +9,10 @@ import UIKit
 
 class EpisodeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var episodeNameLabel: UILabel!
+    
+    @IBOutlet weak var episodeIdLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,5 +23,8 @@ class EpisodeTableViewCell: UITableViewCell {
 
        
     }
-    
+    func setup(_ episode: Episode){
+        episodeNameLabel.text = episode.name
+        episodeIdLabel.text = episode.episode
+    }
 }
