@@ -35,8 +35,6 @@ class DetailViewController: UIViewController {
         
        
     }
-    
-   
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -48,6 +46,7 @@ func fetchEpisodes(episodeUrl: String) {
                 switch result {
                 case .success(let episodeData):
                     self?.characterEpisodes.append(episodeData)
+                    print(self?.characterEpisodes)
                     self?.setupCharacterData()
                     self?.episodeTableView.reloadData()
                 case .failure(let err):
@@ -62,6 +61,7 @@ func fetchEpisodes(episodeUrl: String) {
         guard let episodes = character.episode else { return characterEpisodes }
 
         characterEpisodes = episodes.map {$0.components(separatedBy: "/").last!}.reduce("", +)
+        print(characterEpisodes)
         return characterEpisodes
     }
     
