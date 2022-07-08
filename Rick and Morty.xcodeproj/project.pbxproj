@@ -228,8 +228,8 @@
 		F50C324B2873955200BD5A9A /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
-				F53EC2252875C5700012E3F3 /* EpisodeTableViewCell */,
 				F50C324C2873957F00BD5A9A /* DetailViewController.swift */,
+				F53EC2252875C5700012E3F3 /* EpisodeTableViewCell */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";

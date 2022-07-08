@@ -48,7 +48,8 @@ func fetchEpisodes(episodeUrl: String) {
             NetworkManager.fetchEpisode(episodeURL: episodeUrl) { [weak self] result in
                 switch result {
                 case .success(let episodeData):
-                    self?.characterEpisodes.append(episodeData)
+                    print(episodeData)
+                    self?.characterEpisodes = episodeData
         
                     self?.setupCharacterData()
                     self?.episodeTableView.reloadData()

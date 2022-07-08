@@ -9,9 +9,13 @@ import UIKit
 
 
 class MainViewController: UIViewController {
+    var pageInfo: Info?
     var characters = [Result]()
     let controller = Controller()
     let network = NetworkManager()
+    
+    var isLoading = false
+    
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     override func viewDidLoad() {
@@ -24,12 +28,12 @@ class MainViewController: UIViewController {
         self.tableViewOutlet.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "CharacterTableViewCell")
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
-        fetchCharactersData()
+        fetchCharactersData(NetworkManager.allPersonURL)
     }
     
-    func fetchCharactersData() {
+    func fetchCharactersData(_ url: String) {
         DispatchQueue.main.async {
-            NetworkManager.fetchData(NetworkManager.allPersonURL) { [weak self] result in
+            NetworkManager.fetchData(url) { [weak self] result in
                 switch result {
                 case .success(let infoDataModel):
                     if let result = infoDataModel.results {
@@ -48,6 +52,28 @@ class MainViewController: UIViewController {
         
     }
     
+    func loadMoreData() {
+        
+            self.isLoading = true
+            DispatchQueue.global().async { [weak self] in
+                guard let info = self?.pageInfo else { return }
+                guard let nextPage = info.next else {
+                    DispatchQueue.main.async {
+                        self?.isLoading = false
+                        self?.tableViewOutlet.reloadData()
+                    }
+                    return
+                }
+                print(nextPage)
+
+                self?.fetchCharactersData(nextPage)
+                DispatchQueue.main.async {
+                    self?.tableViewOutlet.reloadData()
+                    self?.isLoading = false
+                }
+            }
+        
+    }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
@@ -76,5 +102,23 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height - view.frame.size.height
+
+        if (offsetY > contentHeight), !isLoading {
+            loadMoreData()
+        }
+        loadMoreData()
+    }
+    
+    private func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+                let lastElement = characters.count - 1
+                if indexPath.row == lastElement {
+                    loadMoreData()
+                    }
+        loadMoreData()
+            }
     
 }

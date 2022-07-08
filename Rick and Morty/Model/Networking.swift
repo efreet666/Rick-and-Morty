@@ -14,7 +14,7 @@ enum ObtainResult {
 }
 
 enum ObtainEpisodeResult {
-    case success(Episode)
+    case success(EpisodeModel)
     case failure(Error)
 }
 
@@ -36,7 +36,7 @@ class NetworkManager{
     }
     
     class func fetchEpisode(episodeURL: String, completion: @escaping (ObtainEpisodeResult) -> Void) {
-        AF.request(episodeURL).responseDecodable(of: Episode.self) {
+        AF.request(episodeURL).responseDecodable(of: EpisodeModel.self) {
             responseJson in
             switch responseJson.result {
             case .success(let json):
