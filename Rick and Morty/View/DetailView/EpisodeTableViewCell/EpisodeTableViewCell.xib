@@ -17,37 +17,44 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EpisodeName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjz-0T-02X">
-                        <rect key="frame" x="16" y="12" width="106" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EpisodeName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjz-0T-02X">
+                        <rect key="frame" x="15" y="10" width="145" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="145" id="jWx-4h-gY0"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" systemColor="systemPinkColor"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RB-Qm-BTE">
-                        <rect key="frame" x="262" y="11" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RB-Qm-BTE">
+                        <rect key="frame" x="170" y="10" width="135" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <color key="backgroundColor" systemColor="systemGray2Color"/>
+                <constraints>
+                    <constraint firstItem="Kjz-0T-02X" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="DIL-wd-kI4"/>
+                    <constraint firstAttribute="bottom" secondItem="Kjz-0T-02X" secondAttribute="bottom" constant="10" id="VnW-TD-xYC"/>
+                    <constraint firstItem="6RB-Qm-BTE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Yz7-Gu-rIK"/>
+                    <constraint firstAttribute="trailing" secondItem="6RB-Qm-BTE" secondAttribute="trailing" constant="15" id="r89-kZ-WhQ"/>
+                    <constraint firstItem="6RB-Qm-BTE" firstAttribute="leading" secondItem="Kjz-0T-02X" secondAttribute="trailing" constant="10" id="ruG-57-AK2"/>
+                    <constraint firstItem="Kjz-0T-02X" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="vqD-2H-TA7"/>
+                    <constraint firstAttribute="bottom" secondItem="6RB-Qm-BTE" secondAttribute="bottom" constant="10" id="yF7-RI-2Yo"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="episodeIdLabel" destination="6RB-Qm-BTE" id="5Z4-pX-Vur"/>
                 <outlet property="episodeNameLabel" destination="Kjz-0T-02X" id="Thx-KV-DZV"/>
             </connections>
-            <point key="canvasLocation" x="132" y="100"/>
+            <point key="canvasLocation" x="131.8840579710145" y="99.776785714285708"/>
         </tableViewCell>
     </objects>
     <resources>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

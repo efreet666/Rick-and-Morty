@@ -33,7 +33,10 @@ class DetailViewController: UIViewController {
         guard let currentCharacter = character else { return }
         fetchEpisodes(episodeUrl: "https://rickandmortyapi.com/api/episode/\(getCharacterEpisodes(currentCharacter))")
         
-       
+        //fetchEpisodes(episodeUrl: "https://rickandmortyapi.com/api/episode/2")
+        
+        self.setupCharacterData()
+        self.episodeTableView.reloadData()
     }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.navigationController?.popViewController(animated: true)
@@ -46,7 +49,7 @@ func fetchEpisodes(episodeUrl: String) {
                 switch result {
                 case .success(let episodeData):
                     self?.characterEpisodes.append(episodeData)
-                    print(self?.characterEpisodes)
+        
                     self?.setupCharacterData()
                     self?.episodeTableView.reloadData()
                 case .failure(let err):
@@ -60,7 +63,9 @@ func fetchEpisodes(episodeUrl: String) {
         var characterEpisodes = ""
         guard let episodes = character.episode else { return characterEpisodes }
 
-        characterEpisodes = episodes.map {$0.components(separatedBy: "/").last!}.reduce("", +)
+        characterEpisodes = episodes.map {$0.components(separatedBy: "/").last!}.joined(separator: ",")
+        print(episodes.map {$0.components(separatedBy: "/").last!})
+        
         print(characterEpisodes)
         return characterEpisodes
     }

@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
                     if let result = infoDataModel.results {
                         for character in result{
                             self?.characters.append(character)
-                            
+                            print(self?.characters as Any)
                             self?.tableViewOutlet.reloadData()
                         }
                     }

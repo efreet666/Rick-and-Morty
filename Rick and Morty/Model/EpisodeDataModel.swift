@@ -20,3 +20,5 @@ struct Episode: Codable {
         case episode, characters, url, created
     }
 }
+
+typealias EpisodeModel = [Episode]
